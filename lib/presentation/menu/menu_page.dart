@@ -2,9 +2,12 @@
 
 
 import 'package:cubic_prueba/presentation/home/view/homepage.dart';
+import 'package:cubic_prueba/presentation/provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../pagination/view/pagination_page.dart';
+import '../provider/providerinfo.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -33,6 +36,20 @@ class MenuPage extends StatelessWidget {
               );
 
             }, child: Text("Pagination")),
+            SizedBox(height: 20,),
+            ElevatedButton(onPressed: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MultiProvider(
+                providers: [
+                  ChangeNotifierProvider<TextProvider>(
+                    create: (_) => TextProvider(),
+                  ),
+                ],
+                child: ProvidePage(),)
+              ));
+
+            }, child: Text("Provider")),
 
           ],
 
@@ -40,7 +57,7 @@ class MenuPage extends StatelessWidget {
         ),
 
       ),
-      
+
     );
   }
 }

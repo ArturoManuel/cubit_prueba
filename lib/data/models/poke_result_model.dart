@@ -13,8 +13,7 @@ class PokeResult with _$PokeResult {
     required List<Result> results,
   }) = _PokeResult;
 
-  factory PokeResult.fromJson(Map<String, Object?> json)
-  => _$PokeResultFromJson(json);
+  factory PokeResult.fromJson(Map<String, Object?> json) => _$PokeResultFromJson(json);
 
 }
 

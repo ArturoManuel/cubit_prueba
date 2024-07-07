@@ -5,6 +5,7 @@ import 'package:cubic_prueba/presentation/home/view/homepage.dart';
 import 'package:cubic_prueba/presentation/splash/view/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 import 'observer.dart';
 
