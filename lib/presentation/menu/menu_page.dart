@@ -6,6 +6,8 @@ import 'package:cubic_prueba/presentation/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../dropdown/dropdown.dart';
+import '../dropdown/provider.dart';
 import '../pagination/view/pagination_page.dart';
 import '../provider/providerinfo.dart';
 
@@ -46,10 +48,23 @@ class MenuPage extends StatelessWidget {
                     create: (_) => TextProvider(),
                   ),
                 ],
-                child: ProvidePage(),)
+                child: const ProvidePage(),)
               ));
 
             }, child: Text("Provider")),
+            SizedBox(height: 20,),
+
+            ElevatedButton(onPressed: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>
+                      MultiProvider(
+                          providers: [ChangeNotifierProvider<DropdownProvider>(create: (_) => DropdownProvider())],
+                          child: const DropdownMenuExample()))
+              );
+
+            }, child: Text("DropDowns")),
+
 
           ],
 
