@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-
 class DropdownProvider with ChangeNotifier {
   final List<String> countries = ['Argentina', 'Brazil', 'Canada', 'Denmark'];
   final Map<String, List<String>> states = {
@@ -22,6 +14,13 @@ class DropdownProvider with ChangeNotifier {
   String? displayedCountry;
   String? displayedState;
   bool canLoadContent = false;
+
+  DropdownProvider() {
+    // Establecer valores por defecto
+    selectedCountry = 'Argentina';
+    selectedState = 'Buenos Aires';
+    loadContent();
+  }
 
   void setSelectedCountry(String value) {
     selectedCountry = value;
@@ -49,6 +48,7 @@ class DropdownProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+
 
 
 
