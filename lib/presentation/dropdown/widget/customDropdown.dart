@@ -8,6 +8,10 @@ class CustomDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dropdownProvider = Provider.of<DropdownProvider>(context);
+    double iconSize = MediaQuery.of(context).size.width *0.03; // Ajustar el tamaño del icono basado en el ancho de la pantalla
+
+    iconSize = iconSize.clamp(16.0, 24.0); // Asegurar que el tamaño del icono esté entre 16 y 24
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return Row(
@@ -88,10 +92,11 @@ class CustomDropdown extends StatelessWidget {
                       thumbVisibility: MaterialStateProperty.all<bool>(true),
                     ),
                   ),
-                  iconStyleData: const IconStyleData(
-                    icon: Icon(Icons.arrow_drop_down),
-                    iconSize: 24,
+                  iconStyleData: IconStyleData(
+                    icon: const Icon(Icons.arrow_drop_down),
+                    iconSize: iconSize,
                     iconEnabledColor: Colors.black,
+                    iconDisabledColor: Colors.grey,
                   ),
                 ),
               ),
@@ -175,10 +180,11 @@ class CustomDropdown extends StatelessWidget {
                       thumbVisibility: MaterialStateProperty.all<bool>(true),
                     ),
                   ),
-                  iconStyleData: const IconStyleData(
-                    icon: Icon(Icons.arrow_drop_down),
-                    iconSize: 24,
+                  iconStyleData: IconStyleData(
+                    icon: const Icon(Icons.arrow_drop_down),
+                    iconSize: iconSize,
                     iconEnabledColor: Colors.black,
+                    iconDisabledColor: Colors.grey,
                   ),
                 ),
               ),
@@ -198,8 +204,3 @@ class CustomDropdown extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

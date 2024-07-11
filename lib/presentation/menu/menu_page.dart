@@ -2,6 +2,9 @@ import 'package:cubic_prueba/presentation/home/view/homepage.dart';
 import 'package:cubic_prueba/presentation/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../datatable/datatable.dart';
+import '../datatable/datatable2.dart';
+import '../datatable/mutiblock.dart';
 import '../dropdown/dropdown.dart';
 import '../dropdown/provider.dart';
 import '../pagination/view/pagination_page.dart';
@@ -59,7 +62,17 @@ class MenuPage extends StatelessWidget {
                 );
         
               }, child: Text("DropDowns")),
-        
+              SizedBox(height: 20),
+
+              ElevatedButton(onPressed: (){
+
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MultiBlockPage ())
+                );
+
+              }, child: Text("Paginación")),
+
+
         
             ],
         
